@@ -29,8 +29,9 @@ func UploadAction(app *cli.App) {
 		Usage: "Upload local image to github repo",
 		Flags: []cli.Flag{
 			&cli.StringFlag{
-				Name:  "repo",
-				Value: "/Users/litianxiang/Desktop/workspace/repo/mdimages",
+				Name: "repo",
+				// handler will use workdir
+				Value: "",
 			},
 			&cli.StringFlag{
 				Name:  "dir",

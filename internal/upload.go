@@ -72,6 +72,9 @@ func Upload(ctx *cli.Context) error {
 		return fmt.Errorf("internal dir must be a source code dir")
 	}
 
+	if len(repo) == 0 {
+		repo, _ = os.Getwd()
+	}
 	info, err := os.Stat(repo)
 	if err != nil {
 		return err
